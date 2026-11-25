@@ -1,0 +1,10 @@
+.git
+.gitignore
+.env
+vendor
+node_modules
+public/build
+public/hot
+prueba_analista.pdf
+docs
+*.md
