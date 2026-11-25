@@ -1,0 +1,247 @@
+{
+  "info": {
+    "_postman_id": "eccab376-af81-477e-98e6-557bd895a4f8",
+    "name": "CurrencyFreaks - Open Rates API",
+    "description": "Colección para la Pregunta 4 de la prueba técnica de Infodec (Analista de Soporte Nivel 1).\n\nConsume la API pública 'Open Rates' de CurrencyFreaks: tasas de cambio diarias de 170 monedas, sin API key, sin signup y sin headers de autenticación.\n\nEndpoint único: GET {{baseUrl}}/rates con dos parámetros opcionales:\n- base: código ISO de 3 letras (por defecto USD).\n- date: fecha YYYY-MM-DD (por defecto, el día más reciente).\n\nLa colección incluye tres respuestas exitosas (200) y una respuesta de error (400) para documentar el diagnóstico y la solución. En Postman: 'Save as example' en cada petición y luego Generate Documentation para publicar la documentación automática.\n\nDocumentación oficial: https://currencyfreaks.com/open-rates-api",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. Tasas recientes (base USD)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/rates",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "rates"
+          ],
+          "query": []
+        },
+        "description": "Consulta las tasas del día más reciente usando la base por defecto (USD). Devuelve 200 con `date`, `base` y un objeto `rates` con 170 monedas."
+      },
+      "response": [
+        {
+          "name": "200 OK -latest rates",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/rates",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "rates"
+              ],
+              "query": []
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "cookie": [],
+          "body": "{\"date\":\"2026-11-25\",\"base\":\"USD\",\"rates\":{\"AED\":3.6725,\"AFN\":66.472,\"ALL\":81.94,\"AMD\":360.56,\"ANG\":1.79,\"AOA\":921.08,\"ARS\":1593.47,\"AUD\":1.5124,\"AWG\":1.7904,\"AZN\":1.6998,\"BAM\":1.7866,\"BBD\":2.017,\"BCH\":0.0051056,\"BDT\":124.81,\"BHD\":0.376,\"BIF\":3010.32,\"BMD\":1,\"BND\":1.2906,\"BOB\":11.8097,\"BRL\":5.9055,\"BSD\":1.0084,\"BTC\":0.000016793,\"BTN\":92.55,\"BWP\":13.988,\"BYN\":2.997,\"BZD\":2.0193,\"CAD\":1.4294,\"CDF\":2294.38,\"CHF\":0.83628,\"CLP\":1032.21,\"CMD\":1,\"CNH\":6.6665,\"CNY\":6.6667,\"COP\":3610.1,\"CRC\":443.13,\"CUP\":24,\"CVE\":100.72,\"CZK\":22.32,\"DJF\":177.69,\"DKK\":6.8292,\"DOP\":60.62,\"DZD\":137.47,\"EGP\":54.365,\"ERN\":15.1774,\"ETB\":162.51,\"ETH\":0.00059836,\"EUR\":0.91348,\"FJD\":2.3005,\"FKP\":0.764,\"GBP\":0.764,\"GEL\":2.5895,\"GGP\":0.764,\"GHS\":11.8136,\"GIP\":0.77283,\"GMD\":74.019,\"GNF\":8846,\"GTQ\":7.6457,\"GYD\":210.93,\"HKD\":7.8472,\"HNL\":26.924,\"HTG\":131.1,\"HUF\":339.04,\"IDR\":18261,\"ILS\":3.3588,\"IMP\":0.764,\"INR\":92.55,\"IQD\":1514.59,\"IRR\":1951377,\"ISK\":125.37,\"JEP\":0.764,\"JMD\":157.67,\"JOD\":0.709,\"JPY\":159.35,\"KES\":130.01,\"KGS\":87.47,\"KHR\":4078.3,\"KMF\":449.81,\"KPW\":130,\"KRW\":1343.68,\"KWD\":0.31026,\"KYD\":0.83721,\"KZT\":458.66,\"LAK\":22441,\"LBP\":89796,\"LKR\":332.51,\"LRD\":164.54,\"LSL\":17.6474,\"LTC\":0.024843,\"LYD\":6.486,\"MAD\":10.0276,\"MDL\":18.3617,\"MGA\":4566.81,\"MKD\":56.236,\"MMK\":2099.71,\"MNT\":3607.65,\"MOP\":8.0826,\"MRO\":357.5,\"MRU\":40.711,\"MUR\":46.997,\"MVR\":15.4427,\"MWK\":1734.23,\"MXN\":19.5035,\"MYR\":4.1163,\"MZN\":63.673,\"NAD\":17.6222,\"NGN\":1384.58,\"NIO\":36.624,\"NOK\":9.8299,\"NPR\":148.2,\"NZD\":1.8292,\"OMR\":0.3845,\"PAB\":1,\"PEN\":3.481,\"PGK\":4.5369,\"PHP\":63.714,\"PKR\":276.93,\"PLN\":4.083,\"PYG\":6422,\"QAR\":3.64,\"RON\":4.8814,\"RSD\":107.47,\"RUB\":82.18,\"RWF\":1477.82,\"SAR\":3.75,\"SBD\":8.1151,\"SCR\":14.497,\"SDG\":600.27,\"SEK\":10.2595,\"SGD\":1.2906,\"SHP\":0.764,\"SLE\":23.311,\"SOS\":570.88,\"SRD\":37.375,\"SSP\":5834,\"STN\":22.141,\"SVC\":8.7546,\"SYP\":122.05,\"SZL\":17.6358,\"THB\":34.011,\"TJS\":9.2231,\"TMT\":3.5,\"TND\":3.0618,\"TOP\":2.428,\"TRY\":50.636,\"TTD\":6.7498,\"TWD\":33.014,\"TZS\":2668.97,\"UAH\":45.304,\"UGX\":4262.44,\"UYU\":40.643,\"UZS\":11983,\"VES\":922.57,\"VND\":25783,\"VUV\":121.62,\"WST\":2.8021,\"XAF\":599.2,\"XAG\":0.02371,\"XAU\":0.00027907,\"XCD\":2.7298,\"XCG\":1.7966,\"XDR\":0.74453,\"XOF\":599.2,\"XPD\":0.0011177,\"XPF\":109.16,\"XPT\":0.00076143,\"XRP\":1.0952,\"YER\":236.49,\"ZAR\":17.5646,\"ZMW\":20.749,\"ZWG\":26.704}}"
+        }
+      ]
+    },
+    {
+      "name": "2. Cambiar moneda base a EUR",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/rates?base=EUR",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "rates"
+          ],
+          "query": [
+            {
+              "key": "base",
+              "value": "EUR"
+            }
+          ]
+        },
+        "description": "Usa el parámetro opcional `base` para expresar todas las tasas en euros. Respuesta 200."
+      },
+      "response": [
+        {
+          "name": "200 OK - base EUR",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/rates?base=EUR",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "rates"
+              ],
+              "query": [
+                {
+                  "key": "base",
+                  "value": "EUR"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "cookie": [],
+          "body": "{\"date\":\"2026-11-25\",\"base\":\"EUR\",\"rates\":{\"AED\":4.0204,\"AFN\":72.768,\"ALL\":89.7,\"AMD\":394.71,\"ANG\":1.9595,\"AOA\":1008.32,\"ARS\":1744.4,\"AUD\":1.6556,\"AWG\":1.9599,\"AZN\":1.8608,\"BAM\":1.9558,\"BBD\":2.2081,\"BCH\":0.0055892,\"BDT\":136.63,\"BHD\":0.41161,\"BIF\":3295.46,\"BMD\":1.0947,\"BND\":1.4129,\"BOB\":12.9283,\"BRL\":6.4648,\"BSD\":1.1039,\"BTC\":0.000018384,\"BTN\":101.32,\"BWP\":15.3129,\"BYN\":3.2808,\"BZD\":2.2106,\"CAD\":1.5647,\"CDF\":2511.7,\"CHF\":0.91549,\"CLP\":1129.98,\"CMD\":1.0947,\"CNH\":7.2979,\"CNY\":7.2982,\"COP\":3952.05,\"CRC\":485.1,\"CUP\":26.273,\"CVE\":110.27,\"CZK\":24.435,\"DJF\":194.52,\"DKK\":7.4761,\"DOP\":66.362,\"DZD\":150.49,\"EGP\":59.515,\"ERN\":16.615,\"ETB\":177.9,\"ETH\":0.00065504,\"FJD\":2.5184,\"FKP\":0.83636,\"GBP\":0.83636,\"GEL\":2.8348,\"GGP\":0.83636,\"GHS\":12.9326,\"GIP\":0.84603,\"GMD\":81.03,\"GNF\":9684,\"GTQ\":8.3699,\"GYD\":230.91,\"HKD\":8.5905,\"HNL\":29.474,\"HTG\":143.52,\"HUF\":371.15,\"IDR\":19991,\"ILS\":3.677,\"IMP\":0.83636,\"INR\":101.32,\"IQD\":1658.06,\"IRR\":2136212,\"ISK\":137.24,\"JEP\":0.83636,\"JMD\":172.61,\"JOD\":0.77616,\"JPY\":174.44,\"KES\":142.32,\"KGS\":95.76,\"KHR\":4464.6,\"KMF\":492.42,\"KPW\":142.31,\"KRW\":1470.95,\"KWD\":0.33965,\"KYD\":0.91651,\"KZT\":502.1,\"LAK\":24567,\"LBP\":98301,\"LKR\":364.01,\"LRD\":180.13,\"LSL\":19.319,\"LTC\":0.027196,\"LYD\":7.1004,\"MAD\":10.9775,\"MDL\":20.101,\"MGA\":4999.38,\"MKD\":61.563,\"MMK\":2298.59,\"MNT\":3949.37,\"MOP\":8.8482,\"MRO\":391.36,\"MRU\":44.567,\"MUR\":51.448,\"MVR\":16.9054,\"MWK\":1898.49,\"MXN\":21.351,\"MYR\":4.5062,\"MZN\":69.705,\"NAD\":19.2914,\"NGN\":1515.73,\"NIO\":40.093,\"NOK\":10.761,\"NPR\":162.23,\"NZD\":2.0025,\"OMR\":0.42092,\"PAB\":1.0947,\"PEN\":3.8107,\"PGK\":4.9666,\"PHP\":69.749,\"PKR\":303.16,\"PLN\":4.4697,\"PYG\":7030,\"QAR\":3.9848,\"RON\":5.3438,\"RSD\":117.65,\"RUB\":89.96,\"RWF\":1617.79,\"SAR\":4.1052,\"SBD\":8.8838,\"SCR\":15.8701,\"SDG\":657.12,\"SEK\":11.2313,\"SGD\":1.4129,\"SHP\":0.83636,\"SLE\":25.519,\"SOS\":624.95,\"SRD\":40.915,\"SSP\":6387,\"STN\":24.238,\"SVC\":9.5838,\"SYP\":133.61,\"SZL\":19.3063,\"THB\":37.232,\"TJS\":10.0967,\"TMT\":3.8315,\"TND\":3.3519,\"TOP\":2.658,\"TRY\":55.433,\"TTD\":7.3891,\"TWD\":36.141,\"TZS\":2921.77,\"UAH\":49.595,\"UGX\":4666.18,\"USD\":1.0947,\"UYU\":44.493,\"UZS\":13118,\"VES\":1009.96,\"VND\":28225,\"VUV\":133.14,\"WST\":3.0675,\"XAF\":655.96,\"XAG\":0.025956,\"XAU\":0.0003055,\"XCD\":2.9884,\"XCG\":1.9667,\"XDR\":0.81505,\"XOF\":655.96,\"XPD\":0.0012235,\"XPF\":119.5,\"XPT\":0.00083355,\"XRP\":1.1989,\"YER\":258.89,\"ZAR\":19.2283,\"ZMW\":22.714,\"ZWG\":29.234}}"
+        }
+      ]
+    },
+    {
+      "name": "3. Consulta histórica (base EUR, fecha 2026-01-15)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/rates?base=EUR&date=2026-01-15",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "rates"
+          ],
+          "query": [
+            {
+              "key": "base",
+              "value": "EUR"
+            },
+            {
+              "key": "date",
+              "value": "2026-01-15"
+            }
+          ]
+        },
+        "description": "Combina `base` y `date` para consultar una fecha pasada. Si el día no tiene publicación, el servicio devuelve la fecha anterior más cercana y la indica en el campo `date`. Respuesta 200."
+      },
+      "response": [
+        {
+          "name": "200 OK - historical rates",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/rates?base=EUR&date=2026-01-15",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "rates"
+              ],
+              "query": [
+                {
+                  "key": "base",
+                  "value": "EUR"
+                },
+                {
+                  "key": "date",
+                  "value": "2026-01-15"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "cookie": [],
+          "body": "{\"date\":\"2026-01-15\",\"base\":\"EUR\",\"rates\":{\"AED\":4.2749,\"AFN\":77.193,\"ALL\":96.46,\"AMD\":442.27,\"ANG\":2.0836,\"AOA\":1067.66,\"ARS\":1692.45,\"AUD\":1.7413,\"AWG\":2.0913,\"AZN\":1.9785,\"BAM\":1.9558,\"BBD\":2.3637,\"BCH\":0.0019659,\"BDT\":142.31,\"BHD\":0.43768,\"BIF\":3454.57,\"BMD\":1.164,\"BND\":1.4991,\"BOB\":8.0317,\"BRL\":6.2651,\"BSD\":1.1739,\"BTC\":0.000012076,\"BTN\":104.99,\"BWP\":15.3571,\"BYN\":3.3889,\"BZD\":2.3504,\"CAD\":1.6158,\"CDF\":2598.81,\"CHF\":0.93239,\"CLP\":1028.17,\"CMD\":1.164,\"CNH\":8.1144,\"CNY\":8.1082,\"COP\":4279.93,\"CRC\":576.21,\"CUP\":27.937,\"CVE\":110.27,\"CZK\":24.27,\"DJF\":206.8,\"DKK\":7.4745,\"DOP\":74.7,\"DZD\":151.34,\"EGP\":55.027,\"ERN\":17.6667,\"ETB\":180.99,\"ETH\":0.00035102,\"FJD\":2.645,\"FKP\":0.86646,\"GBP\":0.86646,\"GEL\":3.1346,\"GGP\":0.86646,\"GHS\":12.5565,\"GIP\":0.87562,\"GMD\":84.87,\"GNF\":10167,\"GTQ\":8.9242,\"GYD\":245.08,\"HKD\":9.0844,\"HNL\":30.732,\"HTG\":152.62,\"HUF\":386.07,\"IDR\":19656,\"ILS\":3.673,\"IMP\":0.86646,\"INR\":104.99,\"IQD\":1524.57,\"IRR\":1191768,\"ISK\":146.37,\"JEP\":0.86646,\"JMD\":183.1,\"JOD\":0.8253,\"JPY\":184.63,\"KES\":150,\"KGS\":101.79,\"KHR\":4687.65,\"KMF\":492.32,\"KPW\":151.32,\"KRW\":1712.99,\"KWD\":0.35672,\"KYD\":0.97455,\"KZT\":594.21,\"LAK\":24901,\"LBP\":104723,\"LKR\":360.5,\"LRD\":210.03,\"LSL\":19.0588,\"LTC\":0.016157,\"LYD\":6.3152,\"MAD\":10.7236,\"MDL\":19.8544,\"MGA\":5340,\"MKD\":61.557,\"MMK\":2441.77,\"MNT\":4144.3,\"MOP\":9.3569,\"MRO\":416.14,\"MRU\":46.284,\"MUR\":53.774,\"MVR\":17.9717,\"MWK\":2019.14,\"MXN\":20.699,\"MYR\":4.7168,\"MZN\":74.11,\"NAD\":19.0667,\"NGN\":1655.44,\"NIO\":42.632,\"NOK\":11.7302,\"NPR\":168.14,\"NZD\":2.0264,\"OMR\":0.44757,\"PAB\":1.1663,\"PEN\":3.913,\"PGK\":4.9652,\"PHP\":69.172,\"PKR\":325.86,\"PLN\":4.2127,\"PYG\":7868,\"QAR\":4.2371,\"RON\":5.0908,\"RSD\":117.31,\"RUB\":91.4,\"RWF\":1695.81,\"SAR\":4.3651,\"SBD\":9.4092,\"SCR\":16.7984,\"SDG\":698.46,\"SEK\":10.7113,\"SGD\":1.4991,\"SHP\":0.86646,\"SLE\":27.455,\"SOS\":664.13,\"SRD\":44.481,\"SSP\":5292,\"STN\":24.576,\"SVC\":10.1886,\"SYP\":133.4,\"SZL\":19.0667,\"THB\":36.598,\"TJS\":10.8428,\"TMT\":4.0741,\"TND\":3.3744,\"TOP\":2.7831,\"TRY\":50.272,\"TTD\":7.8692,\"TWD\":36.724,\"TZS\":2898.16,\"UAH\":50.386,\"UGX\":4147.3,\"USD\":1.164,\"UYU\":45.01,\"UZS\":13952,\"VES\":391.86,\"VND\":30407,\"VUV\":139.56,\"WST\":3.2194,\"XAF\":655.96,\"XAG\":0.012904,\"XAU\":0.00025197,\"XCD\":3.1772,\"XCG\":2.0907,\"XDR\":0.85328,\"XOF\":655.96,\"XPD\":0.00062192,\"XPF\":119.38,\"XPT\":0.00048321,\"XRP\":0.5577,\"YER\":277.44,\"ZAR\":19.0453,\"ZMW\":22.937,\"ZWG\":29.867}}"
+        }
+      ]
+    },
+    {
+      "name": "4. ERROR - fecha futura (evidencia)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/rates?date=2099-01-01",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "rates"
+          ],
+          "query": [
+            {
+              "key": "date",
+              "value": "2099-01-01"
+            }
+          ]
+        },
+        "description": "Evidencia de error para la Pregunta 4: `date=2099-01-01` devuelve 400 con `{\"message\":\"date cannot be in the future\"}`.\n\nDiagnóstico: el parámetro `date` no puede ser posterior al día actual.\nSolución: usar una fecha válida menor o igual a hoy, por ejemplo `date=2026-01-15` (ver petición 3)."
+      },
+      "response": [
+        {
+          "name": "400 Bad Request - date in the future",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/rates?date=2099-01-01",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "rates"
+              ],
+              "query": [
+                {
+                  "key": "date",
+                  "value": "2099-01-01"
+                }
+              ]
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "cookie": [],
+          "body": "{\"message\":\"date cannot be in the future\"}"
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://open-rates.currencyfreaks.com",
+      "type": "string"
+    }
+  ]
+}
